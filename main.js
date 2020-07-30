@@ -1,10 +1,10 @@
 // 回帰直線を求める（最小二乗法）
 const lsm = coordinates => {
   const n = coordinates.length
-  const sigX = coordinates.reduce((acc, c) => acc += c.x, 0)
-  const sigY = coordinates.reduce((acc, c) => acc += c.y, 0)
-  const sigXX = coordinates.reduce((acc, c) => acc += c.x * c.x, 0)
-  const sigXY = coordinates.reduce((acc, c) => acc += c.x * c.y, 0)
+  const sigX = coordinates.reduce((acc, c) => acc + c.x, 0)
+  const sigY = coordinates.reduce((acc, c) => acc + c.y, 0)
+  const sigXX = coordinates.reduce((acc, c) => acc + c.x * c.x, 0)
+  const sigXY = coordinates.reduce((acc, c) => acc + c.x * c.y, 0)
   // a(傾き)を求める
   const a = (n * sigXY - sigX * sigY) / (n * sigXX - Math.pow(sigX, 2));
   // b(切片)を求める
